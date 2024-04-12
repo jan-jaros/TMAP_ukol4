@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import android.content.Intent
+import android.widget.CheckBox
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -36,13 +37,16 @@ class MainActivity : AppCompatActivity() {
     fun loadFinalScene(view: View){
         val nameTextBox =findViewById<TextInputEditText>(R.id.jmenoID)
         val birthdayTextBox =findViewById<TextInputEditText>(R.id.narozeniID)
+        val podminkyCheckBox = findViewById<CheckBox>(R.id.checkBox)
 
         val nameValue =nameTextBox.text.toString()
         val birthdayValue =birthdayTextBox.text.toString()
+        val checkboxValue: Boolean = podminkyCheckBox.isChecked
 
         val intent = Intent(this, FormDetails::class.java).apply {
             putExtra("Jmeno", nameValue)
             putExtra("Narozeni", birthdayValue)
+            putExtra("Check", checkboxValue)
         }
         startActivity(intent)
     }
