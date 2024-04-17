@@ -53,6 +53,7 @@ class MainActivity : AppCompatActivity() {
 
     fun loadFormScene(view: View){
         setContentView(R.layout.formular)
+        //change
     }
 }
 
